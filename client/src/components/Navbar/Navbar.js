@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { useHistory, useLocation } from "react-router-dom";
 import decode from "jwt-decode";
@@ -9,12 +9,20 @@ const Navbar = () => {
   const dispatch = useDispatch();
   const location = useLocation();
   const history = useHistory();
+  /*
   const logout = () => {
     dispatch(signOut(history));
     // history.push("/");
 
     setUser(null);
   };
+*/
+  const logout = useCallback(() => {
+    dispatch(signOut(history));
+    // history.push("/");
+
+    setUser(null);
+  }, [history, dispatch]);
 
   useEffect(() => {
     const token = user?.token;
@@ -26,7 +34,7 @@ const Navbar = () => {
     }
 
     setUser(JSON.parse(localStorage.getItem("profile")));
-  }, [location]);
+  }, [location, user?.token, logout]);
 
   return (
     <div className="ui secondary pointing menu">

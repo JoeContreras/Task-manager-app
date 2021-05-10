@@ -1,14 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { Button, Header, Icon, Modal } from "semantic-ui-react";
-import { createTask, updateTask } from "../../../actions/tasks";
+import { updateTask } from "../../../actions/tasks";
 import { useDispatch, useSelector } from "react-redux";
-import { useHistory } from "react-router-dom";
 
 function ModalExampleCloseIcon({ taskInfo, setId, currentId }) {
   const [taskData, setTaskData] = useState({ description: "" });
   const [open, setOpen] = React.useState(false);
   const dispatch = useDispatch();
-  const history = useHistory();
   const task = useSelector((state) =>
     currentId ? state.tasks.find((task) => task._id === currentId) : null
   );

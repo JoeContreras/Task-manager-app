@@ -109,9 +109,9 @@ const SignupForm = () => {
           </form>
           <div className="ui message">
             {isSignup ? "Already have an account? " : "Don't have an account? "}
-            <a className="ui blue basic button" onClick={switchMode}>
+            <button className="ui blue basic button" onClick={switchMode}>
               {isSignup ? "Sign in" : "Sign up"}
-            </a>
+            </button>
           </div>
         </div>
       </div>

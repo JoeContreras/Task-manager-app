@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { createTask, updateTask } from "../../actions/tasks";
+import { createTask } from "../../actions/tasks";
 
 const Form = ({ currentId, setCurrentId }) => {
   const [taskData, setTaskData] = useState({ description: "" });
@@ -8,7 +8,7 @@ const Form = ({ currentId, setCurrentId }) => {
     currentId ? state.tasks.find((task) => task._id === currentId) : null
   );
   const dispatch = useDispatch();
-  const user = JSON.parse(localStorage.getItem("profile"));
+  // const user = JSON.parse(localStorage.getItem("profile"));
 
   useEffect(() => {
     if (task) setTaskData(task);
@@ -23,7 +23,6 @@ const Form = ({ currentId, setCurrentId }) => {
     e.preventDefault();
 
     dispatch(createTask(taskData));
-    const { description } = taskData;
     clear();
   };
 

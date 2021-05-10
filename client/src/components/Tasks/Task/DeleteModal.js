@@ -2,11 +2,9 @@ import React from "react";
 import { Button, Header, Icon, Modal } from "semantic-ui-react";
 import { deleteTask } from "../../../actions/tasks";
 import { useDispatch } from "react-redux";
-import { useHistory } from "react-router-dom";
 
 function ModalExampleCloseIcon({ taskInfo, setId }) {
   const dispatch = useDispatch();
-  const history = useHistory();
   const [open, setOpen] = React.useState(false);
 
   const handleDelete = () => {

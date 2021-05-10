@@ -4,7 +4,6 @@ import Form from "../TaskForm/Form";
 import Tasks from "../Tasks/Tasks";
 import { getTasks } from "../../actions/tasks";
 import Navbar from "../Navbar/Navbar";
-import Modal from "../Tasks/Task/DeleteModal";
 
 const Home = () => {
   const [currentId, setCurrentId] = useState("");

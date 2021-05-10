@@ -52,7 +52,7 @@ export const getTask = (id) => async (dispatch) => {
 
 export const deleteTask = (id) => async (dispatch) => {
   try {
-    const { data } = await api.deleteTask(id);
+    await api.deleteTask(id);
 
     dispatch({ type: DELETE, payload: id });
   } catch (error) {
