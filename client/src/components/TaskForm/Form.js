@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { createTask } from "../../actions/tasks";
-import { useHistory } from "react-router-dom";
 
 const Form = ({ currentId, setCurrentId }) => {
   const [taskData, setTaskData] = useState({ description: "" });
